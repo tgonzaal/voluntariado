@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voluntariado ProEmprendimiento · UdeC</title>
+<meta name="description" content="Voluntariado ProEmprendimiento de la Universidad de Concepción, Campus Los Ángeles: talleres gratuitos de gestión, emprendimiento y alfabetización digital en la Provincia del Biobío.">
+<style>
+  body { margin: 0; height: 100vh; display: grid; place-items: center; background: #fbfbfd; color: #6e6e73;
+         font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+</style>
+</head>
+<body>
+<p id="msg">Cargando…</p>
+<script>
+// Trae la página desde Apps Script: así cada versión nueva publicada allá se ve aquí sin subir nada.
+fetch('https://script.google.com/macros/s/AKfycbydGBskFKQjxhKWfcocvaLyC-TVD3Z3LoTOS2dTHkqSnzDkbNMnRHAaFfLGMzEpBW9TTg/exec?vista=html')
+  .then(function (r) { return r.text(); })
+  .then(function (h) { document.open(); document.write(h); document.close(); })
+  .catch(function () { document.getElementById('msg').textContent = 'No se pudo cargar la página. Revisa tu conexión y recarga.'; });
+</script>
+</body>
+</html>
