@@ -14,7 +14,8 @@
 <p id="msg">Cargando…</p>
 <script>
 // Trae la página desde Apps Script: así cada versión nueva publicada allá se ve aquí sin subir nada.
-fetch('https://script.google.com/macros/s/AKfycbydGBskFKQjxhKWfcocvaLyC-TVD3Z3LoTOS2dTHkqSnzDkbNMnRHAaFfLGMzEpBW9TTg/exec?vista=html')
+// «t» cambia en cada visita para que el navegador no use una copia guardada de una versión anterior.
+fetch('https://script.google.com/macros/s/AKfycbydGBskFKQjxhKWfcocvaLyC-TVD3Z3LoTOS2dTHkqSnzDkbNMnRHAaFfLGMzEpBW9TTg/exec?vista=html&t=' + Date.now(), { cache: 'no-store' })
   .then(function (r) { return r.text(); })
   .then(function (h) { document.open(); document.write(h); document.close(); })
   .catch(function () { document.getElementById('msg').textContent = 'No se pudo cargar la página. Revisa tu conexión y recarga.'; });
